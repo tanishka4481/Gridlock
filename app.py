@@ -537,100 +537,92 @@ elif pages == "📈 EDA Dashboard":
     
     with tab1:
         st.subheader("Temporal Congestion Density Trends & Macro Seasonal Pulse")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("##### Hourly Operations Pulse (By Cause)")
-            img_path_1a = get_path("charts/visual_b_incident_hourly_patterns.png")
-            if os.path.exists(img_path_1a):
-                st.image(img_path_1a, use_container_width=True)
-            else:
-                st.warning("⚠️ Hourly patterns chart asset is not found at expected path.")
-        
-        with col2:
-            st.markdown("##### Macro Monthly Influx vs Response Velocity")
-            img_path_1b = get_path("charts/chart_8_monthly_macro_trend.png")
-            if os.path.exists(img_path_1b):
-                st.image(img_path_1b, use_container_width=True)
-            else:
-                st.warning("⚠️ Monthly macro trend chart asset is not found at expected path.")
-                
         st.markdown("> **Core Data Insight:** Vehicle breakdowns peak consistently between **5-7 AM** and **5-8 PM** on Outer Ring Road arterial routes, matching logistics carrier operation window switches before cross-city entry blocks lock down. Clear macro monthly fluctuations track seasonal monsoon peaks where clearance velocity drops by up to **42%**.")
+        st.markdown("---")
+        
+        st.markdown("### 🕒 Hourly Operations Pulse (By Cause)")
+        img_path_1a = get_path("charts/visual_b_incident_hourly_patterns.png")
+        if os.path.exists(img_path_1a):
+            st.image(img_path_1a, use_column_width=True)
+        else:
+            st.warning("⚠️ Hourly patterns chart asset is not found at expected path.")
+        
+        st.markdown("### 📅 Macro Monthly Influx vs Response Velocity")
+        img_path_1b = get_path("charts/chart_8_monthly_macro_trend.png")
+        if os.path.exists(img_path_1b):
+            st.image(img_path_1b, use_column_width=True)
+        else:
+            st.warning("⚠️ Monthly macro trend chart asset is not found at expected path.")
         
     with tab2:
         st.subheader("Corridor Pressure & Breakdown Response Matrix")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("##### Top 10 High-Incident Traffic Corridors")
-            img_path_2a = get_path("charts/chart_13_top_corridors.png")
-            if os.path.exists(img_path_2a):
-                st.image(img_path_2a, use_container_width=True)
-            else:
-                st.warning("⚠️ Top corridors chart asset is not found at expected path.")
-        
-        with col2:
-            st.markdown("##### Breakdown Response: Corridor vs Vehicle Type")
-            img_path_2b = get_path("charts/chart_22_breakdown_heatmap.png")
-            if os.path.exists(img_path_2b):
-                st.image(img_path_2b, use_container_width=True)
-            else:
-                st.warning("⚠️ Breakdown Response Matrix heatmap asset is not found at expected path.")
-                
         st.markdown("> **Core Data Insight:** Peenya and Outer Ring Road corridors accumulate the highest density of commercial vehicle accidents. Heavy vehicle breakdowns on three-lane corridors trigger non-linear queue expansions, resulting in average clearance delays exceeding **110 minutes**.")
+        st.markdown("---")
+        
+        st.markdown("### 🛣️ Top 10 High-Incident Traffic Corridors")
+        img_path_2a = get_path("charts/chart_13_top_corridors.png")
+        if os.path.exists(img_path_2a):
+            st.image(img_path_2a, use_column_width=True)
+        else:
+            st.warning("⚠️ Top corridors chart asset is not found at expected path.")
+        
+        st.markdown("### 📊 Breakdown Response: Corridor vs Vehicle Type")
+        img_path_2b = get_path("charts/chart_22_breakdown_heatmap.png")
+        if os.path.exists(img_path_2b):
+            st.image(img_path_2b, use_column_width=True)
+        else:
+            st.warning("⚠️ Breakdown Response Matrix heatmap asset is not found at expected path.")
         
     with tab3:
         st.subheader("Top Critical Intersections Ranked By Operational Impact")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("##### Top 15 Junctions by Traffic Delay Stress")
-            img_path_3a = get_path("charts/visual_g_top_impacted_junctions.png")
-            if os.path.exists(img_path_3a):
-                st.image(img_path_3a, use_container_width=True)
-            else:
-                st.warning("⚠️ Junction hotspot chart asset is not found at expected path.")
-        
-        with col2:
-            st.markdown("##### Closure Rates vs Clearance Timelines")
-            img_path_3b = get_path("charts/chart_24_lookup_blueprint.png")
-            if os.path.exists(img_path_3b):
-                st.image(img_path_3b, use_container_width=True)
-            else:
-                st.warning("⚠️ Closure vs Clearance blueprint asset is not found at expected path.")
-                
         st.markdown("> **Core Data Insight:** Agara Junction and Central Silk Board track with an average historical clearing window exceeding **140 minutes** when heavy fleet carriers breakdown during peak morning windows. Higher closure requirements directly correlate with longer clearance timelines, highlighting the need for early diversion planning.")
+        st.markdown("---")
+        
+        st.markdown("### 🚏 Top 15 Junctions by Traffic Delay Stress")
+        img_path_3a = get_path("charts/visual_g_top_impacted_junctions.png")
+        if os.path.exists(img_path_3a):
+            st.image(img_path_3a, use_column_width=True)
+        else:
+            st.warning("⚠️ Junction hotspot chart asset is not found at expected path.")
+        
+        st.markdown("### 📋 Closure Rates vs Clearance Timelines")
+        img_path_3b = get_path("charts/chart_24_lookup_blueprint.png")
+        if os.path.exists(img_path_3b):
+            st.image(img_path_3b, use_column_width=True)
+        else:
+            st.warning("⚠️ Closure vs Clearance blueprint asset is not found at expected path.")
         
     with tab4:
         st.subheader("Strategic Deployment Matrix & Lifecycle Blueprint")
+        st.markdown("> **Core Data Insight:** Mapped 'High Priority' incident categorizations contain substantial internal duration variances, validating that BTP must prioritize incident type and vehicle class over basic priority labels. Donut status footprints show that active response tracking covers **94.7%** of logged events.")
+        st.markdown("---")
+        
+        st.markdown("### ⚖️ Strategic Deployment & Allocation Matrix")
+        img_path_4a = get_path("charts/chart_25_priority_action_matrix.png")
+        if os.path.exists(img_path_4a):
+            st.image(img_path_4a, use_column_width=True)
+        else:
+            st.warning("⚠️ Strategic Deployment Matrix chart asset is not found at expected path.")
+        
+        st.markdown("---")
+        st.markdown("### 🏢 Lifecycle Status Footprint & Closure Profiles")
         
         col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("##### Strategic Deployment & Allocation Matrix")
-            img_path_4a = get_path("charts/chart_25_priority_action_matrix.png")
-            if os.path.exists(img_path_4a):
-                st.image(img_path_4a, use_container_width=True)
-            else:
-                st.warning("⚠️ Strategic Deployment Matrix chart asset is not found at expected path.")
+        img_path_4b = get_path("charts/chart_4_status_donut.png")
+        img_path_4c = get_path("charts/chart_5_road_closure_by_cause.png")
         
+        with col1:
+            st.markdown("##### Lifecycle Status Footprint")
+            if os.path.exists(img_path_4b):
+                st.image(img_path_4b, use_column_width=True)
+            else:
+                st.warning("⚠️ Status donut asset not found.")
         with col2:
-            st.markdown("##### Lifecycle Status Footprint & Closure Profiles")
-            img_path_4b = get_path("charts/chart_4_status_donut.png")
-            img_path_4c = get_path("charts/chart_5_road_closure_by_cause.png")
-            
-            sub_col1, sub_col2 = st.columns(2)
-            with sub_col1:
-                if os.path.exists(img_path_4b):
-                    st.image(img_path_4b, use_container_width=True)
-                else:
-                    st.warning("⚠️ Status donut asset not found.")
-            with sub_col2:
-                if os.path.exists(img_path_4c):
-                    st.image(img_path_4c, use_container_width=True)
-                else:
-                    st.warning("⚠️ Closure requirement asset not found.")
-                
-        st.markdown("> **Core Data Insight:** Mapped 'High Priority' incident categorizations contain substantial internal duration variances, validating that BTP must prioritize incident type and vehicle class over basic priority labels. Donut status footprints show that active response tracking covers **94.7%** of logged events.")
+            st.markdown("##### Road Closure Requirements by Cause")
+            if os.path.exists(img_path_4c):
+                st.image(img_path_4c, use_column_width=True)
+            else:
+                st.warning("⚠️ Closure requirement asset not found.")
 
 # ==========================================
 # PAGE 5: LIVE MAP HEATMAP RENDERER
