@@ -1,0 +1,16 @@
+# EventGuard Workspace Git Ignore
+__pycache__/
+cache/
+catboost_info/
+bengaluru_network.graphml
+bengaluru_traffic_incident_map.html
+modelling.ipynb
+traffic_modelling_optimized.ipynb
+.idea/
+.vscode/
+venv/
+.env
+.ipynb_checkpoints/
+all_notebook_comments.txt
+*.pyc
+*.pyo
