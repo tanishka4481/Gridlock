@@ -622,6 +622,10 @@ td {
     border-top: 2px dashed var(--success-green);
 }
 
+.color-box.orange-solid {
+    background-color: var(--primary-orange);
+}
+
 .color-box.orange-circle {
     width: 10px;
     height: 10px;

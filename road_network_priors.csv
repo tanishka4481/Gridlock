@@ -1,9 +1,7 @@
-osm_way_id,corridor,junction,hour,day_of_week,observed_avg_speed_kph,probe_gps_density,historical_delay_multiplier
-50239481,orr east 1,agara junction,8,0,18.5,142,3.4
-50239481,orr east 1,agara junction,9,0,14.2,198,4.1
-50239481,orr east 1,agara junction,15,2,22.4,115,2.1
-50239481,orr east 1,agara junction,18,0,12.0,215,4.5
-23948104,tumkur road,peenya junction,8,1,22.0,110,2.8
-23948104,tumkur road,peenya junction,17,1,16.5,165,3.9
-12849102,cbd 2,mg road intersection,13,5,28.0,85,1.5
-0,non-corridor,unknown,0,0,45.0,10,1.0
+grid_x,grid_y,junction,hour,day_of_week,observed_avg_speed_kph,probe_gps_density,historical_delay_multiplier,latitude,longitude
+155,242,agara junction,8,0,18.5,142,3.4,12.921875,77.645158
+155,242,agara junction,9,0,14.2,198,4.1,12.921875,77.645158
+155,242,agara junction,18,0,12.0,215,4.5,12.921875,77.645158
+110,185,peenya junction,8,1,22.0,110,2.8,13.035800,77.514000
+110,185,peenya junction,17,1,16.5,165,3.9,13.035800,77.514000
+162,210,mg road intersection,13,5,28.0,85,1.5,12.971600,77.594600

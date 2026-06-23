@@ -10,6 +10,7 @@ let stationPools = {};
 let activeRouteLayers = {
     dijkstra: null,
     astar: null,
+    tomtom: null,
     incidentDecay: null
 };
 
@@ -463,7 +464,7 @@ async function calculateRoutes() {
             return;
         }
         
-        drawRoutes(result.dijkstra_route, result.astar_route, payload.active_incident);
+        drawRoutes(result.dijkstra_route, result.astar_route, result.tomtom_route, payload.active_incident);
         renderMetricsTable(result.metrics_table);
         
         // Show diagnostics panel
@@ -477,10 +478,11 @@ async function calculateRoutes() {
 function clearPathLayers() {
     if (activeRouteLayers.dijkstra) map.removeLayer(activeRouteLayers.dijkstra);
     if (activeRouteLayers.astar) map.removeLayer(activeRouteLayers.astar);
+    if (activeRouteLayers.tomtom) map.removeLayer(activeRouteLayers.tomtom);
     if (activeRouteLayers.incidentDecay) map.removeLayer(activeRouteLayers.incidentDecay);
 }
 
-function drawRoutes(dijkstraCoords, astarCoords, activeIncident) {
+function drawRoutes(dijkstraCoords, astarCoords, tomtomCoords, activeIncident) {
     clearPathLayers();
     
     // Draw Dijkstra (Solid Blue)
@@ -497,6 +499,15 @@ function drawRoutes(dijkstraCoords, astarCoords, activeIncident) {
         opacity: 0.85,
         dashArray: '8, 8'
     }).addTo(map);
+    
+    // Draw TomTom (Solid Orange)
+    if (tomtomCoords && tomtomCoords.length > 0) {
+        activeRouteLayers.tomtom = L.polyline(tomtomCoords, {
+            color: '#FF9500',
+            weight: 5,
+            opacity: 0.9
+        }).addTo(map);
+    }
     
     // Zoom map bounds
     const bounds = L.latLngBounds([routePoints.origin, routePoints.destination]);
@@ -538,6 +549,7 @@ function renderMetricsTable(tableData) {
             <td style="font-family: 'Outfit'; font-weight: 500;">${row.report}</td>
             <td>${row.dijkstra}</td>
             <td>${row.astar}</td>
+            <td>${row.tomtom || 'N/A'}</td>
         `;
         tbody.appendChild(tr);
     });
